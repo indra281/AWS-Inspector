@@ -16,7 +16,38 @@ class inspector::install inherits inspector {
         refreshonly => true,
       }
     }
+  }
+
+     
+ 
+    case $::operatingsystem {
+    'windows': {
+     
+      file { "C:\\aws-inpector-agent\AWSAgentInstall.exe"
+            
+        ensure => present,
+        owner  => administrator,
+        group  => users,
+        source => "puppet://aws-inspector-win-agent/AWSAgentInstall.exe",
+        notify => Package["Win-agent"]
+           
+          }
+  
+      package { "win-agent":
+        
+        provider  => "windows"
+        ensure    => installed,
+        source    => "C:\\aws-inpector-agent\AWSAgentInstall.exe"
+        subscribe => Exec["msiexec /qn"]
+
+            }
+
+
+               
+
+    }
+    }
     default: { fail("The ${module_name} module is not supported on ${::osfamily}/${::operatingsystem}.") }
   }
-}
+
 
