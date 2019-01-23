@@ -24,7 +24,7 @@ class aws_inspector::install  {
     case $::operatingsystem {
     'windows': {
      
-      file { "C:\\aws-inpector-agent\AWSAgentInstall.exe"
+      file { "C:\\aws-inpector-agent\AWSAgentInstall.exe":
             
         ensure => present,
         owner  => administrator,
