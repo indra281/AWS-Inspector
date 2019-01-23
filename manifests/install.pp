@@ -1,7 +1,7 @@
 # Install the inspector package
 class aws_inspector::install  {
   case $::operatingsystem {
-    'centos': {
+    'RHEL': {
       exec { 'download_inspector-agent':
         command => "/usr/bin/wget -N https://inspector-agent.amazonaws.com/linux/latest/install -O /opt/inspector-install.sh",
         path    => '/bin:/usr/bin:/usr/local/bin:/usr/sbin',
