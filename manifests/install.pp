@@ -48,7 +48,7 @@ class aws_inspector::install  {
 
     }
     }
-    default: { fail("The ${module_name} module is not supported on ${::osfamily}/${::operatingsystem}.") }
+   # default: { fail("The ${module_name} module is not supported on ${::osfamily}/${::operatingsystem}.") }
   }
 
 
