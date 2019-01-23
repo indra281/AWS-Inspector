@@ -39,7 +39,7 @@ class aws_inspector::install  {
         provider  => "windows",
         ensure    => installed,
         source    => "C:\\aws-inpector-agent\AWSAgentInstall.exe",
-        subscribe => Exec["msiexec /qn"]
+        subscribe => Exec["msiexec /qn"],
 
             }
 
