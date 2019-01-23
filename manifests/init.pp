@@ -4,13 +4,13 @@
 # Download and install the AWS Inspector agent.
 
 #
-class inspector {
-  include inspector::params
+class aws-inspector {
+  include aws-inspector::params
 
   if $region {
     validate_string($region)
   }
 
-  include inspector::install
-  include inspector::service
+  include aws-inspector::install
+  include aws-inspector::service
 }

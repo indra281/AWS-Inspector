@@ -1,5 +1,5 @@
 # Ensure inspector service is running.
-class inspector::service inherits inspector {
+class aws-inspector::service {
   case $::operatingsystem {
     'centos': {
       service { 'awsagent':
