@@ -1,4 +1,4 @@
 # Params
-class inspector::params {
+class aws_inspector::params {
 
 }

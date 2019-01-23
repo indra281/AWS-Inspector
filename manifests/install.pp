@@ -1,5 +1,5 @@
 # Install the inspector package
-class aws-inspector::install  {
+class aws_inspector::install  {
   case $::operatingsystem {
     'centos': {
       exec { 'download_inspector-agent':
